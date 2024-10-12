@@ -560,17 +560,14 @@
         if (!localStorage.getItem('user')) {
             signAndLogout.innerHTML = "Login"
         }
-
-        function handleClicl() {
-
-            if (!localStorage.getItem('user')) {
-                window.location.href = 'login.html';
-            }
-            else{
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         document.querySelectorAll('.addToCart').forEach(button => {
             button.addEventListener('click', function () {
+                  if (!localStorage.getItem('user')) {
+                window.location.href = 'login.html';
+            }
 
                 const productName = this.getAttribute('data-name');
                 const productPrice = parseFloat(this.getAttribute('data-price'));
@@ -588,8 +585,8 @@
                 //The product &{productName} has been added to your card
             });
         });
-            }
-        }
+            
+        
 
 
 
