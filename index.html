@@ -243,21 +243,6 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="Assets/Headphones.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Headphones</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                            dignissimos accusantium amet similique velit iste.</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3>200$</h3>
-                        <button class="btn btn-primary addToCart" data-image="Assets/Headphones.jpg"
-                            data-name="Headphones" data-price="200" onclick="handleClicl()">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
                     <img src="Assets/Laptop.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Laptop ASUS</h5>
@@ -581,11 +566,8 @@
             if (!localStorage.getItem('user')) {
                 window.location.href = 'login.html';
             }
-        }
-
-
-
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            else{
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         document.querySelectorAll('.addToCart').forEach(button => {
             button.addEventListener('click', function () {
@@ -606,6 +588,12 @@
                 //The product &{productName} has been added to your card
             });
         });
+            }
+        }
+
+
+
+        
     </script>
 
 
